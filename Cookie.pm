@@ -8,7 +8,7 @@ use vars qw/@ISA $NS $VERSION/;
 @ISA = ('Apache::AxKit::Language::XSP');
 $NS = 'http://axkit.org/NS/xsp/cookie/v1';
 
-$VERSION = "1.4";
+$VERSION = "1.41";
 
 ## Taglib subs
 
@@ -69,7 +69,7 @@ sub parse_start {
     }
     elsif ($tag eq 'fetch') {
         $cookie_context = 'fetch';
-        start_expr($e, $tag);
+        $e->start_expr($tag);
         my $code = 'my (%__cookies, $__cookie, $__cookie_name);' . "\n"; 
         $code .= '%__cookies = Apache::Cookie->fetch;';
         $code .= '$__cookie_name = ""';
@@ -140,8 +140,8 @@ sub parse_end {
     }
     elsif ($tag eq 'fetch') {
         $cookie_context = '';
-        append_to_script($e, '$__cookie->value;');
-        end_expr($e);
+        $e->append_to_script('$__cookie->value;');
+        $e->end_expr;
         return '';
     }
 }
