@@ -4,4 +4,8 @@ use ExtUtils::MakeMaker;
 WriteMakefile(
     'NAME'	=> 'AxKit::XSP::Cookie',
     'VERSION_FROM' => 'Cookie.pm', # finds $VERSION
+    'PREREQ_PM' => {
+            'Apache::Cookie' => 0,
+            'AxKit' => 1.4,
+        },
 );

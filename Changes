@@ -1,5 +1,8 @@
 Revision history for Perl extension AxKit::XSP::Cookie.
 
+1.4
+    - Updated to AxKit 1.4's API
+
 1.00  Wed Mar 28 08:33:48 2001
 	- inital public release
 

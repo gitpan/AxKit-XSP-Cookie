@@ -8,7 +8,7 @@ use vars qw/@ISA $NS $VERSION/;
 @ISA = ('Apache::AxKit::Language::XSP');
 $NS = 'http://axkit.org/NS/xsp/cookie/v1';
 
-$VERSION = "1.00";
+$VERSION = "1.4";
 
 ## Taglib subs
 
